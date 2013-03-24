@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.pine-project.pinetest</groupId>
+    <artifactId>pinetest</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+    <description>
+        Pinetest is a an automation tool for testing pine. It is based on the yaf web testing framework.
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>LATEST</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.project-pine.yaf</groupId>
+            <artifactId>yaf</artifactId>
+            <version>LATEST</version>
+        </dependency>
+    </dependencies>
+    
+</project>
