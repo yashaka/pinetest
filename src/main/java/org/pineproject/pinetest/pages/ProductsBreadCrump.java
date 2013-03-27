@@ -6,7 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.pineproject.yaf.ExtendedLoadableComponent;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+
+import static org.testng.Assert.fail;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,27 +19,30 @@ import java.util.List;
  */
 public class ProductsBreadCrump extends ExtendedLoadableComponent<ProductsBreadCrump> {
 
-    @FindBy(id = "logo-mini")
-    public WebElement pineRootLogo;
+    @FindBy(id = "home")
+    private WebElement pineHomeLnk;
 
     @Override
     public List<WebElement> getExpectedElements() {
-        return Arrays.asList(
-                pineRootLogo
-        );
+        return new LinkedList<WebElement>(Arrays.asList(
+                pineHomeLnk
+        ));
     }
 
     @Override
     protected void load() {
-        //To change body of implemented methods use File | Settings | File Templates.
+       productsPage.get();
     }
 
     @Override
-    protected void isLoaded() throws Error {
-        //To change body of implemented methods use File | Settings | File Templates.
+    public void isLoaded() throws Error {
+        productsPage.isLoaded();
     }
 
-    public ProductsBreadCrump init(WebDriver driver, ProductsPage productsPage) {
-        return super.init(driver, this);
+    public ProductsBreadCrump(WebDriver driver, ProductsPage productsPage) {
+        super(driver);
+        this.productsPage = productsPage;
     }
+
+    private ProductsPage productsPage;
 }

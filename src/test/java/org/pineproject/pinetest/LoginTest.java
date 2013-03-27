@@ -1,7 +1,9 @@
 package org.pineproject.pinetest;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.pineproject.pinetest.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
@@ -12,6 +14,15 @@ import org.testng.annotations.Test;
 import javax.swing.text.NavigationFilter;
 
 public class LoginTest extends Assert {
+
+    @Test
+    public void testLoginPageHaveExpectedElements() {
+//        LoginPage loginPage = new LoginPage(driver, "http:localhost:8080/pine");
+//        loginPage.get();
+//        for(WebElement element : loginPage.getExpectedElements()) {
+//            assertTrue(element.isDisplayed());
+//        }
+    }
 
     @Test(dataProvider = "parseUserCredentials", groups = "functions")
     public void testValidLogin(String user, String password) throws InterruptedException {

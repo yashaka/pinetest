@@ -6,7 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.pineproject.yaf.ExtendedLoadableComponent;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
+
+import static org.testng.Assert.assertTrue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,39 +19,41 @@ import java.util.List;
  */
 public class UserPanel extends ExtendedLoadableComponent<UserPanel> {
 
-    @FindBy(css = "#lbl-user:contains('User:')")
-    public WebElement userLbl;
+    @FindBy(xpath = "//span[text()='User: ']")
+    private WebElement userLbl;
 
-    public WebElement userName;    // TODO: check statically "what the name?"
+    private WebElement userName;    // TODO: ? check statically "what the name?"
 
-    @FindBy(id = "lnk-admin")
-    public WebElement adminLnk;
+    @FindBy(id = "lnk-admin-page")
+    public WebElement adminSpn;
 
     @FindBy(linkText = "Log out")
-    public WebElement logoutLnk;
+    private WebElement logoutLnk;
 
     @Override
     public List<WebElement> getExpectedElements() {
-        return Arrays.asList(
+        return new LinkedList<WebElement>(Arrays.asList(
                 userLbl,
                 userName,
-                adminLnk,
+                adminSpn,
                 logoutLnk
-        );
+        ));
     }
 
     @Override
     protected void load() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        adminProductsPage.get();
     }
 
     @Override
     public void isLoaded() throws Error {
-        //To change body of implemented methods use File | Settings | File Templates.
+        assertTrue(adminSpn.getText().isEmpty());
     }
 
-    public UserPanel init(WebDriver driver) {
-        super.init(driver, this);
-        return this;
+    public UserPanel(WebDriver driver, ProductsPage adminProductsPage) {
+        super(driver);
+        this.adminProductsPage = adminProductsPage;
     }
+
+    private ProductsPage adminProductsPage;
 }

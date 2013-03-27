@@ -17,7 +17,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>LATEST</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.project-pine.yaf</groupId>
