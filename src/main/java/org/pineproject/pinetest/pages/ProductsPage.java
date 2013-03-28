@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.pineproject.yaf.ExtendedLoadableComponent;
 import org.pineproject.yaf.elements.Element;
+import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -20,22 +21,18 @@ public class ProductsPage extends ExtendedLoadableComponent<ProductsPage> {
     @FindBy(className = "table")
     private Element productsTbl;
 
-    @FindBy(id="breadcrump")
     private BreadCrump breadcrump;
 
-    @FindBy(id = "user-panel")
     private UserPanel userPanel;
 
-//    @FindBy(className = "table")
-//    private Element productsTbl;
 
     @Override
-    public List<Element> getExpectedElements() {
-        return new LinkedList<Element>(Arrays.asList(
-                breadcrump,
-//                userPanel,
-                productsTbl
-        ));
+    public List<TypifiedElement> getExpectedElements() {
+        List<TypifiedElement> list = new LinkedList<TypifiedElement>();
+        list.add(productsTbl);
+        list.addAll(breadcrump.getExpectedElements());
+        list.addAll(userPanel.getExpectedElements());
+        return list;
     }
 
     @Override

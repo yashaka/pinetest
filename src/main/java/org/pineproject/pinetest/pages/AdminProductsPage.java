@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.pineproject.yaf.elements.Element;
+import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.List;
 
@@ -24,8 +25,8 @@ public class AdminProductsPage extends ProductsPage {
     private Element addProductBtn;
 
     @Override
-    public List<Element> getExpectedElements() {
-        List<Element> list = super.getExpectedElements();
+    public List<TypifiedElement> getExpectedElements() {
+        List<TypifiedElement> list = super.getExpectedElements();
         list.add(addProductBtn);
         return list;
     }

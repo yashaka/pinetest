@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.pineproject.pinetest.pages.*;
 import org.pineproject.yaf.ExtendedLoadableComponent;
-import org.pineproject.yaf.elements.Element;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.List;
 
@@ -19,9 +19,9 @@ public class StaticContentTest {
     @Test(dataProvider = "adminPageObjects")
     public void testAdminExpectedElements(final ExtendedLoadableComponent page) {
         page.get();
-//        for(WebElement element : page.getExpectedElements()) {    TODO: why this does not work?
-        List<Element> expectedElements = (List<Element>)page.getExpectedElements();
-        for(Element element : expectedElements) {
+        List<TypifiedElement> expectedElements = (List<TypifiedElement>)page.getExpectedElements();
+//        for(TypifiedElement element : page.getExpectedElements()) {    TODO: why this does not work?
+        for(TypifiedElement element : expectedElements) {
             assertTrue(element.isDisplayed());
         }
     }
@@ -29,11 +29,11 @@ public class StaticContentTest {
     @DataProvider
     private Object[][] adminPageObjects() {
         LoginPage            loginPage = new LoginPage(driver, "http://localhost:8080/pine");
-        ProductsPage adminProductsPage = new ProductsPage(driver, loginPage, "admin", "nimda");
+//        ProductsPage adminProductsPage = new ProductsPage(driver, loginPage, "admin", "nimda");
 
         return new Object[][]{
-                {loginPage},
-                  {adminProductsPage},
+                {loginPage}
+//                  {adminProductsPage},
         };
     }
 

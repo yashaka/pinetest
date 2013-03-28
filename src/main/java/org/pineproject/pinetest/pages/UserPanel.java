@@ -1,11 +1,10 @@
 package org.pineproject.pinetest.pages;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.pineproject.yaf.AbstractContainer;
-import org.pineproject.yaf.ExtendedLoadableComponent;
 import org.pineproject.yaf.elements.Element;
+import org.pineproject.yaf.elements.ExtendedHtmlElement;
+import ru.yandex.qatools.htmlelements.annotations.Block;
+import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -19,7 +18,8 @@ import static org.testng.Assert.assertTrue;
  * Date: 25.03.13
  * Time: 15:22
  */
-public class UserPanel extends AbstractContainer {
+@Block(@FindBy(id = "user-panel"))
+public class UserPanel extends ExtendedHtmlElement {
 
     @FindBy(xpath = "//span[text()='User: ']")
     private Element userLbl;
@@ -32,4 +32,13 @@ public class UserPanel extends AbstractContainer {
     @FindBy(linkText = "Log out")
     private Element logoutLnk;
 
+    @Override
+    public List<TypifiedElement> getExpectedElements() {
+        return new LinkedList<TypifiedElement>(Arrays.asList(
+                userLbl,
+                userName,
+                adminSpn,
+                logoutLnk
+        ));
+    }
 }
