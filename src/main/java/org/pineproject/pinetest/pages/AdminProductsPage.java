@@ -5,8 +5,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.pineproject.yaf.elements.Element;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;
@@ -20,21 +20,21 @@ import static org.testng.Assert.fail;
  */
 public class AdminProductsPage extends ProductsPage {
 
-    @FindBy(id = "btn-add-product")
-    private WebElement addProductBtn;
+    @FindBy(xpath = "//*[contains(text(),'Add product')]")
+    private Element addProductBtn;
 
     @Override
-    public List<WebElement> getExpectedElements() {
-        List<WebElement> list = super.getExpectedElements();
+    public List<Element> getExpectedElements() {
+        List<Element> list = super.getExpectedElements();
         list.add(addProductBtn);
         return list;
     }
 
     @Override
-    public void isLoaded() throws Error {
+    protected void isLoaded() throws Error {
         super.isLoaded();
         try {
-            assertTrue(addProductBtn.getText().contains("Add product"));
+            WebElement btn = driver.findElement(By.id("btn-add-product")); //TODO: a bit of code duplication, refactor!
         } catch (NoSuchElementException e) {
             fail("Can't locate correct 'Add product' button");
         }

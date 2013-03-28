@@ -15,17 +15,14 @@ import static org.testng.Assert.fail;
  */
 public class AdminUserPanel extends UserPanel {
 
-    @Override
-    public void isLoaded() throws Error {
-        try {
-            driver.findElement(By.linkText("Admin page")); //TODO: this is somehow a code duplication, see UserPanel.adminSpn, refactor!
-        } catch (NoSuchElementException e) {
-            fail("Can't locate 'Admin page' link");
-        }
-    }
+//    @Override
+//    protected void isLoaded() throws Error {
+//        try {
+//            driver.findElement(By.linkText("Admin page")); //TODO: this is somehow a code duplication, see UserPanel.adminSpn, refactor!
+//        } catch (NoSuchElementException e) {
+//            fail("Can't locate 'Admin page' link");
+//        }
+//    }
 
-    public AdminUserPanel(WebDriver driver, ProductsPage adminProductsPage) {
-        super(driver, adminProductsPage);
-    }
 
 }

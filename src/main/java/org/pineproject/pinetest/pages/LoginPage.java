@@ -5,40 +5,40 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.pineproject.yaf.ExtendedLoadableComponent;
-import org.testng.Assert;
+import org.pineproject.yaf.elements.Button;
+import org.pineproject.yaf.elements.Element;
+import org.pineproject.yaf.elements.TextField;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.fail;
 
 
 public class LoginPage extends ExtendedLoadableComponent<LoginPage> {
 
     @FindBy(id = "login-logo")
-    private WebElement logoImg;
+    private Element logoImg;
 
     @FindBy(xpath = "//div[text()='Username:']")
-    private WebElement usernameLbl;
+    private Element usernameLbl;
 
-    private WebElement username;
+    private TextField username;
 
     @FindBy(xpath = "//div[text()='Password:']")
-    private WebElement passwordLbl;
+    private Element passwordLbl;
 
     @FindBy(name = "pass")
-    private WebElement password;
+    private TextField password;
 
     @FindBy(xpath = "//input[@value='Log in']")
-    private WebElement loginBtn;
+    private Button loginBtn;
 
     @Override
-    public List<WebElement> getExpectedElements() {
-        return new LinkedList<WebElement>(Arrays.asList(
+    public List<Element> getExpectedElements() {
+        return new LinkedList<Element>(Arrays.asList(
             logoImg,
             usernameLbl,
             username,
@@ -50,8 +50,8 @@ public class LoginPage extends ExtendedLoadableComponent<LoginPage> {
 
     public void login(String username, String password) {
         //TODO: change to clearAndType when implemented
-        this.username.sendKeys(username);
-        this.password.sendKeys(password);
+        this.username.clearAndType(username);
+        this.password.clearAndType(password);
         loginBtn.click();
     }
 
@@ -62,13 +62,12 @@ public class LoginPage extends ExtendedLoadableComponent<LoginPage> {
     }
 
     @Override
-    public void isLoaded() throws Error {
+    protected void isLoaded() throws Error {
         try {
             WebElement btn = driver.findElement(By.xpath("//input[@value='Log in']"));
         } catch (NoSuchElementException e) {
             fail("Can't locate 'Log in' button");
         }
-//        assertTrue(loginBtn.isDisplayed(), "Can't locate 'Log in' button"); //TODO: why PageFactory locate doesn't work?
     }
 
     public LoginPage(WebDriver driver, String pineURL) {

@@ -6,24 +6,35 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.pineproject.yaf.ExtendedLoadableComponent;
+import org.pineproject.yaf.elements.Element;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.fail;
 
 
 public class ProductsPage extends ExtendedLoadableComponent<ProductsPage> {
 
     @FindBy(className = "table")
-    private WebElement productsTbl;
+    private Element productsTbl;
+
+    @FindBy(id="breadcrump")
+    private BreadCrump breadcrump;
+
+    @FindBy(id = "user-panel")
+    private UserPanel userPanel;
+
+//    @FindBy(className = "table")
+//    private Element productsTbl;
 
     @Override
-    public List<WebElement> getExpectedElements() {
-        return new LinkedList<WebElement>(Arrays.asList(
-               productsTbl
+    public List<Element> getExpectedElements() {
+        return new LinkedList<Element>(Arrays.asList(
+                breadcrump,
+//                userPanel,
+                productsTbl
         ));
     }
 
@@ -34,7 +45,7 @@ public class ProductsPage extends ExtendedLoadableComponent<ProductsPage> {
     }
 
     @Override
-    public void isLoaded() throws Error {
+    protected void isLoaded() throws Error {
         try {
             WebElement bc = driver.findElement(By.xpath("//div[@id='breadcrump' and not(span[@id='extends-symbol'])]"));
             WebElement user = driver.findElement(By.xpath("//*[@id='userName' and text()='"+username+"']"));
