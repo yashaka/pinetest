@@ -7,7 +7,6 @@ import org.pineproject.pinetest.containers.BreadCrump;
 import org.pineproject.pinetest.containers.ProductsList;
 import org.pineproject.yaf.ExtendedLoadableComponent;
 import org.pineproject.yaf.elements.Element;
-import ru.yandex.qatools.htmlelements.element.Link;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.LinkedList;
@@ -31,7 +30,7 @@ public abstract class ProductsPage extends ExtendedLoadableComponent<ProductsPag
         List<TypifiedElement> list = new LinkedList<TypifiedElement>();
         list.add(productsTbl);
         list.addAll(breadcrump.getExpectedElements());
-//        list.addAll(productsList.getExpectedElements());
+        list.addAll(productsList.getExpectedElements());
         return list;
     }
 
@@ -53,18 +52,18 @@ public abstract class ProductsPage extends ExtendedLoadableComponent<ProductsPag
         }
     }
 
-    public ProductsPage(WebDriver driver, LoginPage loginPage, String username, String password, List<String> products) {
+    public ProductsPage(WebDriver driver, LoginPage loginPage, String username, String password/*, List<String> products*/) {
         super(driver);
         this.loginPage = loginPage;
         this.username = username;
         this.password = password;
-        this.products = products;
+//        this.products = products;
     }
 
     private LoginPage loginPage;
     private String username;
     private String password;
-    private List<String> products;
+//    private List<String> products;
 
 }
 

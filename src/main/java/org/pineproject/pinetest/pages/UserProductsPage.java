@@ -29,7 +29,7 @@ public class UserProductsPage extends ProductsPage {
         return list;
     }
 
-    public UserProductsPage(WebDriver driver, LoginPage loginPage, String username, String password, List<String> products) {
-        super(driver, loginPage, username, password, products);
+    public UserProductsPage(WebDriver driver, LoginPage loginPage, String username, String password/*, List<String> products*/) {
+        super(driver, loginPage, username, password/*, products*/);
     }
 }

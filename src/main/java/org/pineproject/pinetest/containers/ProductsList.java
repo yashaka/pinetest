@@ -7,6 +7,7 @@ import ru.yandex.qatools.htmlelements.element.Link;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -23,6 +24,8 @@ public class ProductsList extends ExtendedHtmlElement {
 
     @Override
     public List<TypifiedElement> getExpectedElements() {
-        return null;
+        List<TypifiedElement> list = new LinkedList<TypifiedElement>();
+        list.addAll(productLinks);
+        return list;
     }
 }

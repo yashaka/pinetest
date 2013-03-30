@@ -28,8 +28,8 @@ public class StaticContentTest {
     @DataProvider
     private Object[][] adminPageObjects() {
         LoginPage            loginPage = new LoginPage(driver, "http://localhost:8080/pine");
-        ProductsPage adminProductsPage = new AdminProductsPage(driver, loginPage, "admin", "nimda",
-                Arrays.asList("ProductsList", "SuperProduct"));
+        ProductsPage adminProductsPage = new AdminProductsPage(driver, loginPage, "admin", "nimda"/*,
+                Arrays.asList("ProductsList", "SuperProduct")*/);
 
         return new Object[][]{
                 {loginPage},
@@ -40,8 +40,8 @@ public class StaticContentTest {
     @DataProvider
     private Object[][] userPageObjects() {
         LoginPage            loginPage = new LoginPage(driver, "http://localhost:8080/pine");
-        ProductsPage userProductsPage = new UserProductsPage(driver, loginPage, "productuser", "user",
-                Arrays.asList("ProductsList"));
+        ProductsPage userProductsPage = new UserProductsPage(driver, loginPage, "productuser", "user"/*,
+                Arrays.asList("ProductsList")*/);
 
         return new Object[][]{
                     {userProductsPage}

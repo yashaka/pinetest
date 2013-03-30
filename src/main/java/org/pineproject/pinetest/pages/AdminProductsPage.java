@@ -46,8 +46,8 @@ public class AdminProductsPage extends ProductsPage {
         }
     }
 
-    public AdminProductsPage(WebDriver driver, LoginPage loginPage, String username, String password, List<String> products) {
-        super(driver, loginPage, username, password, products);
+    public AdminProductsPage(WebDriver driver, LoginPage loginPage, String username, String password/*, List<String> products*/) {
+        super(driver, loginPage, username, password/*, products*/);
     }
 
 }
