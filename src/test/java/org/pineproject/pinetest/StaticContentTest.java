@@ -4,12 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.pineproject.pinetest.pages.*;
 import org.pineproject.yaf.ExtendedLoadableComponent;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.pineproject.yaf.HaveExpectedElements;
+import org.testng.annotations.*;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;
@@ -17,27 +16,44 @@ import static org.testng.Assert.assertTrue;
 public class StaticContentTest {
 
     @Test(dataProvider = "adminPageObjects")
-    public void testAdminExpectedElements(final ExtendedLoadableComponent page) {
-        page.get();
-        List<TypifiedElement> expectedElements = (List<TypifiedElement>)page.getExpectedElements();
-//        for(TypifiedElement element : page.getExpectedElements()) {    TODO: why this does not work?
-        for(TypifiedElement element : expectedElements) {
-            assertTrue(element.isDisplayed());
-        }
+    public void testAdminPageExpectedElements(final ExtendedLoadableComponent page) {
+        assertPageExpectedElementsAreDisplayed(page);
+    }
+
+    @Test(dataProvider = "userPageObjects")
+    public void testUserPageExpectedElements(final ExtendedLoadableComponent page) {
+        assertPageExpectedElementsAreDisplayed(page);
     }
 
     @DataProvider
     private Object[][] adminPageObjects() {
         LoginPage            loginPage = new LoginPage(driver, "http://localhost:8080/pine");
-//        ProductsPage adminProductsPage = new ProductsPage(driver, loginPage, "admin", "nimda");
+        ProductsPage adminProductsPage = new AdminProductsPage(driver, loginPage, "admin", "nimda",
+                Arrays.asList("ProductsList", "SuperProduct"));
 
         return new Object[][]{
-                {loginPage}
-//                  {adminProductsPage},
+                {loginPage},
+                    {adminProductsPage}
         };
     }
 
-    private WebDriver driver;
+    @DataProvider
+    private Object[][] userPageObjects() {
+        LoginPage            loginPage = new LoginPage(driver, "http://localhost:8080/pine");
+        ProductsPage userProductsPage = new UserProductsPage(driver, loginPage, "productuser", "user",
+                Arrays.asList("ProductsList"));
+
+        return new Object[][]{
+                    {userProductsPage}
+        };
+    }
+
+    private void assertPageExpectedElementsAreDisplayed(final ExtendedLoadableComponent page) {
+        page.get();
+        for(TypifiedElement element : page.getExpectedElements()) {
+            assertTrue(element.isDisplayed());
+        }
+    }
 
     @BeforeClass
     public void beforeClass() {
@@ -48,4 +64,6 @@ public class StaticContentTest {
     public void afterClass() {
         driver.quit();
     }
+
+    private WebDriver driver;
 }

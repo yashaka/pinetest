@@ -1,10 +1,9 @@
 package org.pineproject.pinetest.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.pineproject.pinetest.containers.AdminUserPanel;
 import org.pineproject.yaf.elements.Element;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
@@ -21,6 +20,8 @@ import static org.testng.Assert.fail;
  */
 public class AdminProductsPage extends ProductsPage {
 
+    private AdminUserPanel adminUserPanel;
+
     @FindBy(xpath = "//*[contains(text(),'Add product')]")
     private Element addProductBtn;
 
@@ -28,21 +29,25 @@ public class AdminProductsPage extends ProductsPage {
     public List<TypifiedElement> getExpectedElements() {
         List<TypifiedElement> list = super.getExpectedElements();
         list.add(addProductBtn);
+        list.addAll(adminUserPanel.getExpectedElements());
         return list;
     }
 
     @Override
     protected void isLoaded() throws Error {
         super.isLoaded();
+        if (addProductBtn == null) {
+            fail("Can't get addProductBtn instance");
+        }
         try {
-            WebElement btn = driver.findElement(By.id("btn-add-product")); //TODO: a bit of code duplication, refactor!
+            addProductBtn.getWrappedElement();
         } catch (NoSuchElementException e) {
             fail("Can't locate correct 'Add product' button");
         }
     }
 
-    public AdminProductsPage(WebDriver driver, LoginPage loginPage, String username, String password) {
-        super(driver, loginPage, username, password);
+    public AdminProductsPage(WebDriver driver, LoginPage loginPage, String username, String password, List<String> products) {
+        super(driver, loginPage, username, password, products);
     }
 
 }

@@ -20,16 +20,17 @@ import static org.testng.Assert.fail;
 
 public class LoginPage extends ExtendedLoadableComponent<LoginPage> {
 
-//    @FindBy(id = "login-logo")
-//    private Element logoImg;
-//
-//    @FindBy(xpath = "//div[text()='Username:']")
-//    private Element usernameLbl;
+    @FindBy(id = "login-logo")
+    private Element logoImg;
 
+    @FindBy(xpath = "//div[text()='Username:']")
+    private Element usernameLbl;
+
+    @FindBy(name = "username")
     private TextInput username;
 
-//    @FindBy(xpath = "//div[text()='Password:']")
-//    private Element passwordLbl;
+    @FindBy(xpath = "//div[text()='Password:']")
+    private Element passwordLbl;
 
     @FindBy(name = "pass")
     private TextInput password;
@@ -40,10 +41,10 @@ public class LoginPage extends ExtendedLoadableComponent<LoginPage> {
     @Override
     public List<TypifiedElement> getExpectedElements() {
         return new LinkedList<TypifiedElement>(Arrays.asList(
-//            logoImg,
-//            usernameLbl,
+            logoImg,
+            usernameLbl,
             username,
-//            passwordLbl,
+            passwordLbl,
             password,
             loginBtn
         ));
@@ -51,9 +52,9 @@ public class LoginPage extends ExtendedLoadableComponent<LoginPage> {
 
     public void login(String username, String password) {
         //TODO: change to clearAndType(...)
-        this.username.clear();
+//        this.username.clear();
         this.username.sendKeys(username);
-        this.password.clear();
+//        this.password.clear();
         this.password.sendKeys(password);
         loginBtn.click();
     }
@@ -66,8 +67,11 @@ public class LoginPage extends ExtendedLoadableComponent<LoginPage> {
 
     @Override
     protected void isLoaded() throws Error {
+        if (loginBtn == null) {
+            fail("Can't get 'Log in' Button instance");
+        }
         try {
-            WebElement btn = driver.findElement(By.xpath("//input[@value='Log in']"));
+            loginBtn.getWrappedElement();
         } catch (NoSuchElementException e) {
             fail("Can't locate 'Log in' button");
         }
