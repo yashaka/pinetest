@@ -1,0 +1,79 @@
+description:
+  - pinetest is an implementation of automation test framework based mainly on Selenium and HtmlElements frameworks.
+  - it serves to test Pine, a tool to help implement Data Driven Testing in your test framework (see www.pine-project.org)
+
+done:
+  - something works:)
+  - revise load() in ProductsPage childs and general guidelines about implementing the method:
+    - especially the usage of locators
+  - override isLoaded method of all childs of the base page - to make them distinguish from each other
+  - moved from element.getWrappedElement to element.isDisplayed in isLoaded method of a page
+  - more static content tests:
+    - check username in userpanel
+    - check products:
+      - displayed
+      - all needed listed
+      - user with empty products
+
+next:
+  - make dataproviders DRY
+
+future:
+  - make a presentation
+  - DDT via Pine:
+    - move data from static content tests to pine
+  - add setup of database for each test
+  - more static content tests:
+    - check products:
+      - admin with empty products
+    - check popup menu:
+      - etc...
+  - functions test
+  - reportng
+  - ? move @BeforeClass to @BeforeMethod
+  - separate StaticContent tests in different classes
+
+
+OpenPoints:
+  - case:
+    - given:
+      - loginPage = new ...
+      - productsPage = new ...
+      - loginPage.get()
+      - productsPage.get()
+    - when:
+      - loginPage.get()
+    - it:
+      - will call inside:
+        - loginBtn.getWrappedElement():
+          - and will just return wrappedElement:
+            - why? why won't it call .getWrappedEleent() on a proxy, to seek for the element again on the page?
+
+  - can I overload locators (@FindBy) ?:
+    - a workaround may be:
+      - make a wrapper for an element as HtmlElement with default 'block' locator:
+        - then you have two options:
+          - use default locator
+          - or override it once
+    - but forgoing option use static approach... and best option will be to update/generate locators dynamicaly:
+      - i.e. based on values passed to constructors of the page:
+        - but nevertheless you can't pass parameters to containers:
+          - 'htmlelements' containers can't use user defined constructors:
+            - because they are created by factory in a predefined way
+    - so...:
+      - the only option in current context of containers usage:
+        - is to move such verification out of page responsibilities:
+          - i.e. to tests themselves:
+            - what is good practice nevertheless:)
+
+  - can I use variables in locators (@FindBy)?
+
+  - why can't I catch NullPointerException on btn = loginBtn but can check (loginBtn == null)?
+
+  - what's better?:
+    - for(Element element: page.getExpectedElements) { assertTrue(element.isDisplayed() }
+    - page.get():
+      - isLoaded():
+        - element1.getWrappedElement();
+    - move getExpectedElements into isLoaded()
+

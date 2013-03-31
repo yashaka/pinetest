@@ -1,8 +1,7 @@
 package org.pineproject.pinetest.containers;
 
 import org.openqa.selenium.support.FindBy;
-import org.pineproject.pinetest.containers.UserPanel;
-import org.pineproject.yaf.elements.Element;
+import org.pineproject.pinetest.core.elements.Element;
 import ru.yandex.qatools.htmlelements.annotations.Block;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 

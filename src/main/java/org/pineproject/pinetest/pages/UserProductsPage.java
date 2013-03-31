@@ -3,7 +3,7 @@ package org.pineproject.pinetest.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.pineproject.pinetest.containers.SimpleUserPanel;
-import org.pineproject.yaf.elements.Element;
+import org.pineproject.pinetest.core.elements.Element;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.List;

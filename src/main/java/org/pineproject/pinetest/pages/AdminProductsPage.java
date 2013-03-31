@@ -4,7 +4,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.pineproject.pinetest.containers.AdminUserPanel;
-import org.pineproject.yaf.elements.Element;
+import org.pineproject.pinetest.core.elements.Element;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.List;

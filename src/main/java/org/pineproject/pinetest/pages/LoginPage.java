@@ -1,12 +1,10 @@
 package org.pineproject.pinetest.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.pineproject.yaf.ExtendedLoadableComponent;
-import org.pineproject.yaf.elements.Element;
+import org.pineproject.pinetest.core.ExtendedLoadableComponent;
+import org.pineproject.pinetest.core.elements.Element;
 import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 import ru.yandex.qatools.htmlelements.element.TextInput;

@@ -6,7 +6,7 @@ import org.pineproject.pinetest.pages.AdminProductsPage;
 import org.pineproject.pinetest.pages.LoginPage;
 import org.pineproject.pinetest.pages.ProductsPage;
 import org.pineproject.pinetest.pages.UserProductsPage;
-import org.pineproject.yaf.ExtendedLoadableComponent;
+import org.pineproject.pinetest.core.ExtendedLoadableComponent;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;

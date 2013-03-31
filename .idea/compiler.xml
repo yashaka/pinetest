@@ -25,7 +25,6 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="pinetest" />
-        <module name="yaf" />
       </profile>
     </annotationProcessing>
   </component>

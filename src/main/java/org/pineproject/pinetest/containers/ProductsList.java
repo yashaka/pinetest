@@ -1,12 +1,11 @@
 package org.pineproject.pinetest.containers;
 
 import org.openqa.selenium.support.FindBy;
-import org.pineproject.yaf.elements.ExtendedHtmlElement;
+import org.pineproject.pinetest.core.elements.ExtendedHtmlElement;
 import ru.yandex.qatools.htmlelements.annotations.Block;
 import ru.yandex.qatools.htmlelements.element.Link;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 

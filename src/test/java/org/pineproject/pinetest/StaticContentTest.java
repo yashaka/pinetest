@@ -1,7 +1,7 @@
 package org.pineproject.pinetest;
 
 import org.pineproject.pinetest.pages.*;
-import org.pineproject.yaf.ExtendedLoadableComponent;
+import org.pineproject.pinetest.core.ExtendedLoadableComponent;
 import org.testng.annotations.*;
 
 import java.util.List;

@@ -5,8 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.pineproject.pinetest.containers.BreadCrump;
 import org.pineproject.pinetest.containers.ProductsList;
-import org.pineproject.yaf.ExtendedLoadableComponent;
-import org.pineproject.yaf.elements.Element;
+import org.pineproject.pinetest.core.ExtendedLoadableComponent;
 import ru.yandex.qatools.htmlelements.element.Link;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 

@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/pinetest.iml" filepath="$PROJECT_DIR$/pinetest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../yaf/yaf.iml" filepath="$PROJECT_DIR$/../yaf/yaf.iml" />
     </modules>
   </component>
 </project>

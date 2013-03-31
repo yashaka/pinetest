@@ -1,15 +1,9 @@
 package org.pineproject.pinetest.dataproviders;
 
-import org.openqa.selenium.WebDriver;
-import org.pineproject.pinetest.pages.AdminProductsPage;
-import org.pineproject.pinetest.pages.LoginPage;
-import org.pineproject.pinetest.pages.ProductsPage;
-import org.pineproject.pinetest.pages.UserProductsPage;
-import org.pineproject.yaf.ddt.DataProviderUtils;
+import org.pineproject.pinetest.core.ddt.DataProviderUtils;
 import org.testng.annotations.DataProvider;
 
 import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.Map;
 
 /**
