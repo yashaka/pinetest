@@ -26,6 +26,11 @@ public class AdminProductsPage extends ProductsPage {
     private Element addProductBtn;
 
     @Override
+    public TypifiedElement getUserNameLabel() {
+        return adminUserPanel.getUserName();
+    }
+
+    @Override
     public List<TypifiedElement> getExpectedElements() {
         List<TypifiedElement> list = super.getExpectedElements();
         list.add(addProductBtn);
@@ -40,7 +45,7 @@ public class AdminProductsPage extends ProductsPage {
             fail("Can't get addProductBtn instance");
         }
         try {
-            addProductBtn.getWrappedElement();
+            addProductBtn.isDisplayed();
         } catch (NoSuchElementException e) {
             fail("Can't locate correct 'Add product' button");
         }

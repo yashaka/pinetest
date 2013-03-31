@@ -71,7 +71,7 @@ public class LoginPage extends ExtendedLoadableComponent<LoginPage> {
             fail("Can't get 'Log in' Button instance");
         }
         try {
-            loginBtn.getWrappedElement();
+            loginBtn.isDisplayed();
         } catch (NoSuchElementException e) {
             fail("Can't locate 'Log in' button");
         }

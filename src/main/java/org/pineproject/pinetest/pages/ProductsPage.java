@@ -25,6 +25,8 @@ public abstract class ProductsPage extends ExtendedLoadableComponent<ProductsPag
 
     private ProductsList productsList;
 
+    public abstract TypifiedElement getUserNameLabel();
+
     @Override
     public List<TypifiedElement> getExpectedElements() {
         List<TypifiedElement> list = new LinkedList<TypifiedElement>();
@@ -46,7 +48,7 @@ public abstract class ProductsPage extends ExtendedLoadableComponent<ProductsPag
             fail("Can't get breadcrump instance");
         }
         try {
-            breadcrump.getWrappedElement();
+            breadcrump.isDisplayed();
         } catch (NoSuchElementException e) {
             fail("Can't locate user label in userpanel or breadcrump with the only root node");
         }

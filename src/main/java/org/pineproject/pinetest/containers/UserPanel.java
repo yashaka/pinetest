@@ -30,6 +30,10 @@ public abstract class UserPanel extends ExtendedHtmlElement {
     @FindBy(linkText = "Log out")
     private Element logoutLnk;
 
+    public Element getUserName() {
+        return userName;
+    }
+
     @Override
     public List<TypifiedElement> getExpectedElements() {
         return new LinkedList<TypifiedElement>(Arrays.asList(
