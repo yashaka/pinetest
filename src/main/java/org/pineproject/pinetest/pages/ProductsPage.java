@@ -7,6 +7,7 @@ import org.pineproject.pinetest.containers.BreadCrump;
 import org.pineproject.pinetest.containers.ProductsList;
 import org.pineproject.yaf.ExtendedLoadableComponent;
 import org.pineproject.yaf.elements.Element;
+import ru.yandex.qatools.htmlelements.element.Link;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.LinkedList;
@@ -26,6 +27,18 @@ public abstract class ProductsPage extends ExtendedLoadableComponent<ProductsPag
     private ProductsList productsList;
 
     public abstract TypifiedElement getUserNameLabel();
+
+    public List<Link> getProductLinks() {
+        return productsList.getProductLinks();
+    }
+
+    public List<String> getProductLinkTexts() {
+        return new LinkedList<String>() {{
+           for(Link link : getProductLinks()) {
+               add(link.getText());
+           }
+        }};
+    }
 
     @Override
     public List<TypifiedElement> getExpectedElements() {

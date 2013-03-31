@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/StaticContentTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/AdminProductsPage.java" afterPath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/AdminProductsPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java" afterPath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/ProductsList.java" afterPath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/ProductsList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/ProductsPage.java" afterPath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/ProductsPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/StaticContentTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/StaticContentTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/UserPanel.java" afterPath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/UserPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/UserProductsPage.java" afterPath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/UserProductsPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pinetest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,9 +18,9 @@
     <file path="/LoginPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364737207181" ignored="false" />
     <file path="/fragment.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364700137404" ignored="false" />
     <file path="/HaveExpectedElements.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364489172399" ignored="false" />
-    <file path="/StaticContentTest.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364702311113" ignored="false" />
+    <file path="/StaticContentTest.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364745548065" ignored="false" />
     <file path="/ExtendedLoadableComponent.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364600544455" ignored="false" />
-    <file path="/ProductsPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364737277296" ignored="false" />
+    <file path="/ProductsPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364744245192" ignored="false" />
     <file path="/UserPanelPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364250934285" ignored="false" />
     <file path="/UnderSectionsPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364228687008" ignored="false" />
     <file path="/BreadCrumpProductsPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364251843273" ignored="false" />
@@ -61,9 +56,10 @@
     <file path="/UserProductsPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364737292616" ignored="false" />
     <file path="/SimpleUserPanel.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364612474737" ignored="false" />
     <file path="/Product.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364670879984" ignored="false" />
-    <file path="/ProductsList.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364679550744" ignored="false" />
+    <file path="/ProductsList.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364741032071" ignored="false" />
     <file path="$PROJECT_DIR$/../../../learning-java/zed/Zed/src/com/globallogic/zed/tests/BaseTest.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364683312607" ignored="false" />
     <file path="/BaseTest.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364683308014" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364745712167" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,25 +124,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StaticContentTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="StaticContentTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/StaticContentTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="54" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.0">
+            <state line="74" column="0" selection-start="2595" selection-end="2595" vertical-scroll-proportion="0.80349344">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#adminPageObjects#0;class#StaticContentTest#0" expanded="false" />
                 <element signature="method#testAdminPageExpectedElementsAreDisplayed#0;class#StaticContentTest#0" expanded="false" />
+                <element signature="method#userPageObjects#0;class#StaticContentTest#0" expanded="false" />
                 <element signature="method#testUserPageExpectedElementsAreDisplayed#0;class#StaticContentTest#0" expanded="false" />
+                <element signature="method#pagesWithNamesAfterLogIn#0;class#StaticContentTest#0" expanded="false" />
+                <element signature="method#testNameIsDisplayedAfterLogin#0;class#StaticContentTest#0" expanded="false" />
+                <element signature="method#pagesWithProductNamesList#0;class#StaticContentTest#0" expanded="false" />
+                <element signature="method#testAllProductsAreListedAfterLogin#0;class#StaticContentTest#0" expanded="false" />
+                <element signature="method#assertPageExpectedElementsAreDisplayed#0;class#StaticContentTest#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginPage.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java">
+      <file leaf-file-name="ProductsPage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/ProductsPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="35" selection-start="2067" selection-end="2090" vertical-scroll-proportion="0.6200873">
+            <state line="35" column="35" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1392#1409#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductsList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/ProductsList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="5" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#861#878#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -180,12 +196,12 @@
         <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/BreadCrump.java" />
         <option value="$PROJECT_DIR$/../yaf/src/main/java/org/pineproject/yaf/HaveExpectedElements.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/ProductsList.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/UserPanel.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/ProductsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/UserProductsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/AdminProductsPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/ProductsList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/ProductsPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/StaticContentTest.java" />
       </list>
     </option>
@@ -1016,13 +1032,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/testng/lib/testng.jar!/org/testng/internal/TestMethodWorker.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="16" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.28421053">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/testng/lib/testng.jar!/org/testng/TestRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="213" column="17" selection-start="12850" selection-end="12850" vertical-scroll-proportion="0.30844155">
@@ -1083,16 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/ProductsPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="36" selection-start="1552" selection-end="1552" vertical-scroll-proportion="0.55632186">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1037#1054#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../yaf/src/main/java/org/pineproject/yaf/ExtendedLoadableComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="0" selection-start="540" selection-end="540" vertical-scroll-proportion="0.23362446">
@@ -1128,22 +1127,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/StaticContentTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="54" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.0">
+        <state line="74" column="43" selection-start="2134" selection-end="2134" vertical-scroll-proportion="0.6528384">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#testAdminPageExpectedElementsAreDisplayed#0;class#StaticContentTest#0" expanded="false" />
-            <element signature="method#testUserPageExpectedElementsAreDisplayed#0;class#StaticContentTest#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/ProductsList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="35" selection-start="2067" selection-end="2090" vertical-scroll-proportion="0.6200873">
+        <state line="26" column="5" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#861#878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/ProductsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="35" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1392#1409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/StaticContentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="0" selection-start="2595" selection-end="2595" vertical-scroll-proportion="0.80349344">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#adminPageObjects#0;class#StaticContentTest#0" expanded="false" />
+            <element signature="method#testAdminPageExpectedElementsAreDisplayed#0;class#StaticContentTest#0" expanded="false" />
+            <element signature="method#userPageObjects#0;class#StaticContentTest#0" expanded="false" />
+            <element signature="method#testUserPageExpectedElementsAreDisplayed#0;class#StaticContentTest#0" expanded="false" />
+            <element signature="method#pagesWithNamesAfterLogIn#0;class#StaticContentTest#0" expanded="false" />
+            <element signature="method#testNameIsDisplayedAfterLogin#0;class#StaticContentTest#0" expanded="false" />
+            <element signature="method#pagesWithProductNamesList#0;class#StaticContentTest#0" expanded="false" />
+            <element signature="method#testAllProductsAreListedAfterLogin#0;class#StaticContentTest#0" expanded="false" />
+            <element signature="method#assertPageExpectedElementsAreDisplayed#0;class#StaticContentTest#0" expanded="false" />
           </folding>
         </state>
       </provider>

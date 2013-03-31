@@ -22,6 +22,10 @@ public class ProductsList extends ExtendedHtmlElement {
     @FindBy(css = "a[href^='?product=']")
     private List<Link> productLinks;
 
+    public List<Link> getProductLinks() {
+        return productLinks;
+    }
+
     @Override
     public List<TypifiedElement> getExpectedElements() {
         List<TypifiedElement> list = new LinkedList<TypifiedElement>();
