@@ -15,21 +15,8 @@ import javax.swing.text.NavigationFilter;
 
 public class LoginTest extends Assert {
 
-    @Test
-    public void testLoginPageHaveExpectedElements() {
-//        LoginPage loginPage = new LoginPage(driver, "http:localhost:8080/pine");
-//        loginPage.get();
-//        for(WebElement element : loginPage.getExpectedElements()) {
-//            assertTrue(element.isDisplayed());
-//        }
-    }
-
     @Test(dataProvider = "parseUserCredentials", groups = "functions")
     public void testValidLogin(String user, String password) throws InterruptedException {
-//        goHelper.
-//                goLoginPage();
-//                login(user, password);
-//                assertEquals(actual, expected);
         driver.get("http://localhost:8080/pine/");
         Thread.sleep(4000);
     }
