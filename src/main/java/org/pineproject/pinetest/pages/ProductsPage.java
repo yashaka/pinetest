@@ -18,9 +18,6 @@ import static org.testng.AssertJUnit.fail;
 
 public abstract class ProductsPage extends ExtendedLoadableComponent<ProductsPage> {
 
-    @FindBy(className = "table")
-    private Element productsTbl;
-
     @FindBy(xpath = "//div[@id='breadcrump' and not(span[@id='extends-symbol'])]")
     private BreadCrump breadcrump;
 
@@ -43,7 +40,6 @@ public abstract class ProductsPage extends ExtendedLoadableComponent<ProductsPag
     @Override
     public List<TypifiedElement> getExpectedElements() {
         List<TypifiedElement> list = new LinkedList<TypifiedElement>();
-        list.add(productsTbl);
         list.addAll(breadcrump.getExpectedElements());
         list.addAll(productsList.getExpectedElements());
         return list;

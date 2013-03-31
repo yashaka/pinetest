@@ -5,7 +5,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.pineproject.pinetest.pages.*;
 import org.pineproject.yaf.ExtendedLoadableComponent;
 import org.testng.annotations.*;
-import ru.yandex.qatools.htmlelements.element.Link;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.Arrays;
@@ -79,11 +78,13 @@ public class StaticContentTest {
         String adminName = "admin";
         LoginPage            loginPage = new LoginPage(driver, pineUrl);
         ProductsPage  userProductsPage =  new UserProductsPage(driver, loginPage, userName, "user");
+        ProductsPage  poorUserProductsPage =  new UserProductsPage(driver, loginPage, "poor", "user");
         ProductsPage adminProductsPage = new AdminProductsPage(driver, loginPage, adminName, "nimda");
 
         return new Object[][]{
                 {userProductsPage, Arrays.asList("Product")},
-                {adminProductsPage, Arrays.asList("Product", "SuperProduct")}
+                {adminProductsPage, Arrays.asList("Product", "SuperProduct")},
+                {poorUserProductsPage, Arrays.asList()}
         };
     }
 
