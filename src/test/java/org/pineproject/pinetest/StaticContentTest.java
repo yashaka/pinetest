@@ -15,6 +15,16 @@ import static org.hamcrest.Matchers.*;
 import static org.testng.Assert.assertTrue;
 import static ru.yandex.qatools.htmlelements.matchers.WrapsElementMatchers.hasText;
 
+/*
+ * The name for this test sounds nice:) but actually the name should be: ContentStaticTest
+ * The latter better describes what is covered here:
+ * - static verification of all content on the page:
+ *  - i.e. assuring that all elements on the page (including dynamically generated) are displayed.
+ *
+ * So far only two pages are covered: LoginPage and ProductsPage. That's why all tests live here.
+ * As soon as more pages will be covered, separate classes will be created
+ * and combined in a "ContentStatic" testNG Test or Suite.
+ */
 @Test(groups = {"smoke"})
 public class StaticContentTest {
 
@@ -93,6 +103,7 @@ public class StaticContentTest {
         productsPage.get();
         assertThat(productsPage.getProductLinkTexts(), equalTo(products));
     }
+
 
     private void assertPageExpectedElementsAreDisplayed(final ExtendedLoadableComponent page) {
         page.get();
