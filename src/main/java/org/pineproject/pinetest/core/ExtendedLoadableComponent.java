@@ -32,7 +32,6 @@ public abstract class ExtendedLoadableComponent<T extends ExtendedLoadableCompon
 //     *   inside 'parent' page.
 //     */
     private void initAndLoad() {
-//        PageFactory.initElements(new ExtendedFieldDecorator(driver), this);
         HtmlElementLoader.populate(this, driver);
         load();
     }

@@ -1,39 +1,150 @@
+---
 description:
-  - pinetest is an implementation of automation test framework based mainly on Selenium and HtmlElements frameworks.
-  - it serves to test Pine, a tool to help implement Data Driven Testing in your test framework (see www.pine-project.org)
+  - pinetest is an implementation of an automation test framework based mainly on Selenium and HtmlElements frameworks:
+    - it serves to test Pine, a tool to help implement Data Driven Testing in your test framework (see www.pine-project.org)
+    - its core part (package org.pineproject.pinetest.core) can be used separately:
+      - to implement the same approaches for automation testing other web applications
+      - as soon as it become a mature one, it can be moved to a separate library and shared to the world wide
 
+---
 done:
-  - something works:)
-  - revise load() in ProductsPage childs and general guidelines about implementing the method:
-    - especially the usage of locators
-  - override isLoaded method of all childs of the base page - to make them distinguish from each other
-  - moved from element.getWrappedElement to element.isDisplayed in isLoaded method of a page
-  - more static content tests:
-    - check username in userpanel
-    - check products:
-      - displayed
-      - all needed listed
-      - user with empty products
+  - Design Patterns and Best Practices implemented:
+    - PageObject
+
+    - PageFactory:
+      - elements on a page are initialized with a factory (the one from htmlelements yandex library) on the first call to the page
+
+    - LoadableComponent/ChainOfResponsibility:
+      - PageObjects knows where they are in the chain of user workflows in the web application:
+        - PageObjects can check whether they are already loaded
+        - load itself (via loading all dependent PageObjects if needed):
+          - once all obligatory parameters are passed to the constructor
+          - To achieve this PageObjects extends LoadableComponent abstract class:
+            - LoadableComponent class is based on implementation of his 'same name' brother from Selenium:
+              - in addition to Selenium's implementation it also encapsulates:
+                - the WebDriver driver object
+                - initialization of page elements via HtmlElementLoader (PageFactory implementation from htmlelements framework):
+                  - once page was loaded
+
+    - Data Driven Testing:
+      - This is not fully implemented yet:
+        - so far the separation of tests and their data is done only on the classes hierarchy level:
+          - data lives in DataProviders of the parent base class for the test class the data are used in
+        - though the implementation of DataProviderArguments was added:
+          - it's possible to pass a data source parameter to dataprovider from its test:
+            - hence the dataprovider will know from where to load data (from file, database, etc... - this is not implemented yet)
+
+    - Elements and Element Containers:
+      - instead of using selenium WebElements pinetest uses:
+        - Elements extending TypifiedElements from htmlelements framework
+        - Element Containers extending ExtendedHtmlElement (extended version of HtmlElement from htmlelements framework)
+
+    - HaveExpectedElements:
+      - This interface is implemented by all children of ExtendedLoadableComponent and ExtendedHtmlElement:
+        - hence we can get all content from the page and its containers via call to getExpectedElements() on the page:
+          - this gives us very convenient way to implement smoke testing of all static content on the pages and base navigation between pages:
+            - via one tiny test per path in the "Chain Of Responsibilites" hirerarchy of page objects: |
+
+                @Test(dataProvider = "adminPageObjects")
+                public void testAdminPageExpectedElementsAreDisplayed(final ExtendedLoadableComponent page) {
+                    assertPageExpectedElementsAreDisplayed(page);
+                }
+
+                protected void assertPageExpectedElementsAreDisplayed(final ExtendedLoadableComponent page) {
+                    page.get();
+                    for(TypifiedElement element : page.getExpectedElements()) {
+                        assertTrue(element.isDisplayed());
+                    }
+                }
+
+            - each path is reflected in a separate DataProvider which initializes PageObjects and passes them to the test
+            - actually all DataProviders may be merged in a one:
+              - so we will have only one test for all such smoke testing!:
+                - though in this case each path will not be tested "independently" from the other ones:
+                  i.e. some side efects may be catched:
+                    what is btw other good idea for additional test case:
+                      but to impelement it in a DRY way we need to figure out how to reuse code from previous DataProviders -> TODO
+
+  - Technologies-used:
+    - Selenium (WebDriver), HtmlElements, TestNG, Hamcrest
+
+  - Test-Coverage:
+    - StaticContent (smoke) testing:
+      - this also includes static testing of dynamically generated elements (like products list, user name in userpanel after login, etc.)
+      - under static testing the verification of element is Displayed is meant
+      - Tested:
+        - LoginPage
+        - ProductsPage
+    - Browsers-coverage:
+      - Firefox
+
+
 
 next:
-  - make dataproviders DRY
+  - Milestone 0.1: "QuickStart:)":
+    - TBD
+
+
 
 future:
-  - make a presentation
-  - DDT via Pine:
-    - move data from static content tests to pine
-  - add setup of database for each test
-  - more static content tests:
-    - check products:
-      - admin with empty products
-    - check popup menu:
-      - etc...
-  - functions test
-  - reportng
-  - ? move @BeforeClass to @BeforeMethod
-  - separate StaticContent tests in different classes
+  - Milestone 0.1: "QuickStart:)":
+    - DDT:
+      - via Pine:
+        - move data from static content tests to pine
+        - add setup of database for each test using data from DDT storage
+      - for static content tests: #? TODO: this section is considered to be moved to Milestone 0.2
+        - make DataProviders DRY
+    - more static content tests:
+      - check products:
+        - admin with empty products
+      - check popup menu:
+        - etc...
+    - add tests to CI:  create testng.xml/yml configuration for CI tests
+      - create testng.xml/yml configuration for CI tests
+      - add job to jenkins farm at inside.pine-project.org
+    - Functional testing for:
+      - Pages:
+        - LoginPage
+        - ProductsPage
+      - Links:
+        - ? consider tesing links in a separate testng suite/group
+    - add ReportNG reporting
+    - ? move @BeforeClass to @BeforeMethod of static content tests
+    - separate StaticContent tests in different classes
 
 
+  - Milestone 0.2: "TBD":
+    - Documentation:
+      - Comment code
+      - Refactor TestPlan
+      - Start series of articles aka "Building Automation Test Framework from scratch: Best Practises"
+    - Test Coverage: 
+      - Cover all Pages:
+        - Popup Pages everywhere
+        - AdminPage:
+            New/Edit User Page
+        - AddProductPage
+        - ProductPage:
+          - DataTablesPage:
+            - AddCategoryPage
+            - TBD
+          - DataStoagesPage:
+            - AddCategoryPage
+            - TBD
+          - ImportPage
+     - Browsers:
+       - Chrome
+       - InternetExplorer
+       - TBD
+    - Refactor code
+    - TBD
+
+
+  - Milestone 0.3: "TBD":
+    - TBD
+
+
+---
 OpenPoints:
   - case:
     - given:
@@ -77,3 +188,4 @@ OpenPoints:
         - element1.getWrappedElement();
     - move getExpectedElements into isLoaded()
 
+...
