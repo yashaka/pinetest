@@ -1,5 +1,6 @@
 package org.pineproject.pinetest.containers;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.FindBy;
 import org.pineproject.pinetest.core.elements.ExtendedHtmlElement;
 import ru.yandex.qatools.htmlelements.annotations.Block;
@@ -18,7 +19,8 @@ import java.util.List;
 @Block(@FindBy(className = "table"))
 public class ProductsList extends ExtendedHtmlElement {
 
-    @FindBy(css = "a[href^='?product=']")
+//    @FindBy(css = "a[href^='?product='] > span")
+    @FindBy(className = "product-item")
     private List<Link> productLinks;
 
     public List<Link> getProductLinks() {
@@ -30,5 +32,25 @@ public class ProductsList extends ExtendedHtmlElement {
         List<TypifiedElement> list = new LinkedList<TypifiedElement>();
         list.addAll(productLinks);
         return list;
+    }
+
+    /*
+     * Returns TypifiedElement once product with specified name was found
+     * Returns null otherwise
+     */
+    public TypifiedElement getProductByName(String productName) throws NoSuchElementException {
+        Link productFound = null;
+        for(Link product : productLinks) {
+            String productText = product.getText();
+            if (productText.equals(productName)) {
+                productFound = product;
+            }
+        }
+        if (productFound == null) {
+            throw new NoSuchElementException("Can't find product with specified name: " + productName);
+        }
+        else {
+            return productFound;
+        }
     }
 }

@@ -2,10 +2,12 @@ package org.pineproject.pinetest.pages;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.pineproject.pinetest.containers.BreadCrump;
 import org.pineproject.pinetest.containers.ProductsList;
 import org.pineproject.pinetest.core.ExtendedLoadableComponent;
+import org.pineproject.pinetest.core.elements.Element;
 import ru.yandex.qatools.htmlelements.element.Link;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
@@ -36,6 +38,14 @@ public abstract class ProductsPage extends ExtendedLoadableComponent<ProductsPag
         }};
     }
 
+    public void popupProductMenu(TypifiedElement product) {
+        (new Actions(driver)).contextClick(product.getWrappedElement()).perform();
+    }
+
+    public void popupProductMenu(String productName) throws NoSuchElementException {
+        popupProductMenu(productsList.getProductByName(productName));
+    }
+
     @Override
     public List<TypifiedElement> getExpectedElements() {
         List<TypifiedElement> list = new LinkedList<TypifiedElement>();
@@ -58,22 +68,19 @@ public abstract class ProductsPage extends ExtendedLoadableComponent<ProductsPag
         try {
             breadcrump.isDisplayed();
         } catch (NoSuchElementException e) {
-            fail("Can't locate user label in userpanel or breadcrump with the only root node");
+            fail("Can't locate breadcrump with the only root node");
         }
     }
 
-    public ProductsPage(WebDriver driver, LoginPage loginPage, String username, String password/*, List<String> products*/) {
+    public ProductsPage(WebDriver driver, LoginPage loginPage, String username, String password) {
         super(driver);
         this.loginPage = loginPage;
         this.username = username;
         this.password = password;
-//        this.products = products;
     }
 
     private LoginPage loginPage;
     private String username;
     private String password;
-//    private List<String> products;
-
 }
 

@@ -67,6 +67,7 @@ done:
       - Tested:
         - LoginPage
         - ProductsPage
+        - ProductPopupMenuPage
     - Browsers-coverage:
       - Firefox
 
@@ -89,8 +90,6 @@ future:
     - more static content tests:
       - check products:
         - admin with empty products
-      - check popup menu:
-        - etc...
     - add tests to CI:  create testng.xml/yml configuration for CI tests
       - create testng.xml/yml configuration for CI tests
       - add job to jenkins farm at inside.pine-project.org
@@ -98,6 +97,7 @@ future:
       - Pages:
         - LoginPage
         - ProductsPage
+        - ProductPopupMenuPage
       - Links:
         - ? consider tesing links in a separate testng suite/group
     - add ReportNG reporting

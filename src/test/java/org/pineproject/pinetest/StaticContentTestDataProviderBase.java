@@ -1,16 +1,8 @@
 package org.pineproject.pinetest;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.pineproject.pinetest.pages.AdminProductsPage;
-import org.pineproject.pinetest.pages.LoginPage;
-import org.pineproject.pinetest.pages.ProductsPage;
-import org.pineproject.pinetest.pages.UserProductsPage;
+import org.pineproject.pinetest.pages.*;
 import org.pineproject.pinetest.core.ExtendedLoadableComponent;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
 import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 import java.util.Arrays;
@@ -40,10 +32,13 @@ public class StaticContentTestDataProviderBase extends PineTestBase {
     protected Object[][] adminPageObjects() {
         LoginPage loginPage = new LoginPage(driver, pineUrl);
         ProductsPage adminProductsPage = new AdminProductsPage(driver, loginPage, "admin", "nimda");
+        ProductPopupMenuPage productPopupMenuPage = new ProductPopupMenuPage(driver, adminProductsPage, "SuperProduct");
+        //TODO: consider to add test for popup menus on all listed products, think how to do this in a DRY way
 
         return new Object[][]{
                 {loginPage},
-                {adminProductsPage}
+                {adminProductsPage},
+                {productPopupMenuPage}
         };
     }
 
@@ -51,9 +46,11 @@ public class StaticContentTestDataProviderBase extends PineTestBase {
     protected Object[][] userPageObjects() {
         LoginPage            loginPage = new LoginPage(driver, pineUrl);
         UserProductsPage userProductsPage = new UserProductsPage(driver, loginPage, "productuser", "user");
+        ProductPopupMenuPage productPopupMenuPage = new ProductPopupMenuPage(driver, userProductsPage, "Product");
 
         return new Object[][]{
-                {userProductsPage}
+                {userProductsPage},
+                {productPopupMenuPage}
         };
     }
 
