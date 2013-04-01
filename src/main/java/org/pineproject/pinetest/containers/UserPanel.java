@@ -25,7 +25,7 @@ public abstract class UserPanel extends ExtendedHtmlElement {
     private Element userLbl;
 
     @FindBy(id = "userName")
-    private Element userName;    // TODO: ? check statically "what the name?"
+    private Element userName;
 
     @FindBy(linkText = "Log out")
     private Element logoutLnk;

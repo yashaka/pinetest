@@ -34,7 +34,7 @@ import static org.testng.Assert.assertTrue;
  * These DataProviders are not DRY. But it's hard to fix this because though used data is similar, it go with different structure.
  * TODO: Think how to make DataProviders for StaticContent DRY.
  */
-public class StaticContentTestDataProviderBase {
+public class StaticContentTestDataProviderBase extends PineTestBase {
 
     @DataProvider(name = "adminPageObjects")
     protected Object[][] adminPageObjects() {
@@ -95,18 +95,5 @@ public class StaticContentTestDataProviderBase {
         }
     }
 
-    @Parameters("pine-url")
-    @BeforeClass
-    public void beforeClass(String pineUrl) {
-        driver = new FirefoxDriver();
-        this.pineUrl = pineUrl;
-    }
 
-    @AfterClass
-    public void afterClass() {
-        driver.quit();
-    }
-
-    private WebDriver driver;
-    private String pineUrl;
 }

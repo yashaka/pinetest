@@ -58,7 +58,7 @@ public class LoginPage extends ExtendedLoadableComponent<LoginPage> {
 
     @Override
     protected void load() {
-        driver.get(pineURL); //TODO: delete this line on pine fixed regarding this...
+        driver.get(pineURL); //TODO: this is a temporal spike to deal with bug in Pine, delete this once fixed...
         driver.get(pineURL + "/logout");
     }
 

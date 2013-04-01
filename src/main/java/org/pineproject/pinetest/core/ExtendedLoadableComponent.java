@@ -22,6 +22,7 @@ public abstract class ExtendedLoadableComponent<T extends ExtendedLoadableCompon
 
 //    /*
 //     * This method is used to call PageFactory.initElements(...)
+//     * or any of its alternatives (HtmlElementLoader.populate(...))
 //     *   before calling load() method that will actually load a page.
 //     * Calling PageFactory initialization in the 'load' context of get()
 //     *   results in the fact you can't create implement some elements' containers
@@ -39,14 +40,6 @@ public abstract class ExtendedLoadableComponent<T extends ExtendedLoadableCompon
     protected abstract void load();
 
     protected abstract void isLoaded() throws Error;
-
-    /*
-     * think on moving this method to a class from interface
-     *   this will make possible to have classes with default implementation of this method
-     *   but not usable from code if it would be marked as private. i.e. you need to make it public explicitly
-     *   while overloading if you want to use it.
-     */
-//    public abstract List<TypifiedElement> getExpectedElements();
 
     public ExtendedLoadableComponent(WebDriver driver) {
         this.driver = driver;
