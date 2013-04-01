@@ -15,7 +15,6 @@ import java.util.List;
 
 import static org.testng.Assert.fail;
 
-
 public class LoginPage extends ExtendedLoadableComponent<LoginPage> {
 
     @FindBy(id = "login-logo")

@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/worklog.yml" afterPath="$PROJECT_DIR$/worklog.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/core/ExtendedLoadableComponent.java" afterPath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/core/ExtendedLoadableComponent.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_easytesting_fest_assert_1_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_easytesting_fest_util_1_1_6.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java" afterPath="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pinetest.iml" afterPath="$PROJECT_DIR$/pinetest.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pinetest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -13,7 +16,7 @@
     <file path="$PROJECT_DIR$/../../../QA Automation/SimpleThucidideProject/.idea/workspace.xml" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364054124010" ignored="false" />
     <file path="/LoginTest.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364183489008" ignored="false" />
     <file path="/pom.xml" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364767060952" ignored="false" />
-    <file path="/Dummy.txt" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364700137404" ignored="false" />
+    <file path="/Dummy.txt" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656332" ignored="false" />
     <file path="/.gitignore" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364132803870" ignored="false" />
     <file path="/LoginPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364737207181" ignored="false" />
     <file path="/fragment.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364766769600" ignored="false" />
@@ -64,7 +67,16 @@
     <file path="/DataProviderUtils.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364761261766" ignored="false" />
     <file path="/StaticContentDataProviderTestBase.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364764030276" ignored="false" />
     <file path="/worklog.yml" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364765255256" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364774603651" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/BreadCrump.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656567" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/UserProductsPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656567" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/SimpleUserPanel.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656567" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/AdminProductsPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656567" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/core/ddt/DataProviderUtils.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656567" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/core/ddt/DataProviderArguments.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656567" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/AdminUserPanel.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656567" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/ProductsList.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656567" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/ProductsPage.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656567" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/UserPanel.java" changelist="cfe418a2-5854-47ca-bf7d-106fbe4cf6ba" time="1364782656567" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,10 +141,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="23" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.24881516">
+            <state line="29" column="23" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/LoginTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="40" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginPage.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="36" selection-start="581" selection-end="581" vertical-scroll-proportion="0.51605505">
               <folding />
             </state>
           </provider>
@@ -150,10 +180,8 @@
       <file leaf-file-name="StaticContentTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/StaticContentTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="8" selection-start="1298" selection-end="1298" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="35" column="8" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,10 +189,8 @@
       <file leaf-file-name="StaticContentTestDataProviderBase.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/StaticContentTestDataProviderBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="4" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="17" column="40" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -188,7 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/UserProductsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/AdminProductsPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/ProductsList.java" />
@@ -203,6 +228,7 @@
         <option value="$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/LoginTest.java" />
         <option value="$PROJECT_DIR$/worklog.yml" />
         <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/core/ExtendedLoadableComponent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
@@ -315,8 +341,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -471,6 +495,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -488,12 +514,12 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -679,6 +705,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -704,19 +743,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -835,7 +861,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.4970888" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.4970888" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4945946" sideWeight="0.9170306" order="4" side_tool="false" content_ui="tabs" />
@@ -845,12 +870,13 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.4621543" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.49417758" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22489083" sideWeight="0.65675676" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22852984" sideWeight="0.6581081" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27219796" sideWeight="0.65675676" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34324324" sideWeight="0.8238719" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27219796" sideWeight="0.6581081" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34189188" sideWeight="0.8238719" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.4970888" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
@@ -959,15 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="43" selection-start="2134" selection-end="2134" vertical-scroll-proportion="0.6528384">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/containers/ProductsList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="5" selection-start="737" selection-end="737" vertical-scroll-proportion="0.65502185">
@@ -990,16 +1007,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/worklog.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/LoginTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="26" selection-start="727" selection-end="727" vertical-scroll-proportion="0.35172415">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/core/ddt/DataProviderArguments.java">
@@ -1039,9 +1047,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../yaf/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="20" selection-start="1579" selection-end="1579" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="42" column="20" selection-start="1579" selection-end="1579" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/core/ExtendedLoadableComponent.java">
@@ -1053,25 +1059,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/StaticContentTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="8" selection-start="1298" selection-end="1298" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="35" column="8" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/StaticContentTestDataProviderBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="4" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="17" column="40" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="23" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.24881516">
+        <state line="29" column="23" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/pineproject/pinetest/LoginTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="40" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/pineproject/pinetest/pages/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="36" selection-start="581" selection-end="581" vertical-scroll-proportion="0.51605505">
           <folding />
         </state>
       </provider>
