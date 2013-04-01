@@ -1,12 +1,4 @@
 ---
-description:
-  - pinetest is an implementation of an automation test framework based mainly on Selenium and HtmlElements frameworks:
-    - it serves to test Pine, a tool to help implement Data Driven Testing in your test framework (see www.pine-project.org)
-    - its core part (package org.pineproject.pinetest.core) can be used separately:
-      - to implement the same approaches for automation testing other web applications
-      - as soon as it become a mature one, it can be moved to a separate library and shared to the world wide
-
----
 done:
   - Design Patterns and Best Practices implemented:
     - PageObject
@@ -20,19 +12,19 @@ done:
         - load itself (via loading all dependent PageObjects if needed):
           - once all obligatory parameters are passed to the constructor
           - To achieve this PageObjects extends LoadableComponent abstract class:
-            - LoadableComponent class is based on implementation of his 'same name' brother from Selenium:
-              - in addition to Selenium's implementation it also encapsulates:
+            LoadableComponent class is based on implementation of his 'same name' brother from Selenium:
+              in addition to Selenium's implementation it also encapsulates:
                 - the WebDriver driver object
                 - initialization of page elements via HtmlElementLoader (PageFactory implementation from htmlelements framework):
-                  - once page was loaded
+                  once page was loaded
 
     - Data Driven Testing:
       - This is not fully implemented yet:
         - so far the separation of tests and their data is done only on the classes hierarchy level:
-          - data lives in DataProviders of the parent base class for the test class the data are used in
+          data lives in DataProviders of the parent base class for the test class the data are used in
         - though the implementation of DataProviderArguments was added:
-          - it's possible to pass a data source parameter to dataprovider from its test:
-            - hence the dataprovider will know from where to load data (from file, database, etc... - this is not implemented yet)
+          it's possible to pass a data source parameter to dataprovider from its test:
+            hence the dataprovider will know from where to load data (from file, database, etc... - this is not implemented yet)
 
     - Elements and Element Containers:
       - instead of using selenium WebElements pinetest uses:
@@ -41,8 +33,8 @@ done:
 
     - HaveExpectedElements:
       - This interface is implemented by all children of ExtendedLoadableComponent and ExtendedHtmlElement:
-        - hence we can get all content from the page and its containers via call to getExpectedElements() on the page:
-          - this gives us very convenient way to implement smoke testing of all static content on the pages and base navigation between pages:
+        hence we can get all content from the page and its containers via call to getExpectedElements() on the page:
+          this gives us very convenient way to implement smoke testing of all static content on the pages and base navigation between pages:
             - via one tiny test per path in the "Chain Of Responsibilites" hirerarchy of page objects: |
 
                 @Test(dataProvider = "adminPageObjects")
@@ -59,8 +51,8 @@ done:
 
             - each path is reflected in a separate DataProvider which initializes PageObjects and passes them to the test
             - actually all DataProviders may be merged in a one:
-              - so we will have only one test for all such smoke testing!:
-                - though in this case each path will not be tested "independently" from the other ones:
+              so we will have only one test for all such smoke testing!:
+                though in this case each path will not be tested "independently" from the other ones:
                   i.e. some side efects may be catched:
                     what is btw other good idea for additional test case:
                       but to impelement it in a DRY way we need to figure out how to reuse code from previous DataProviders -> TODO
@@ -186,6 +178,8 @@ OpenPoints:
     - page.get():
       - isLoaded():
         - element1.getWrappedElement();
-    - move getExpectedElements into isLoaded()
+    - move getExpectedElements into isLoaded():
+      - cons:
+        - it will have bad influence on tests run time
 
 ...
